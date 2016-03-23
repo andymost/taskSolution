@@ -1,0 +1,64 @@
+@import (css, inline) "./reset.css";
+
+html, body{
+    height: 100%;
+    overflow: hidden;
+}
+
+.map{
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgb(246, 242, 222);
+    &:hover{
+        background-color: rgb(233, 230, 211);
+    }
+}
+
+.wrapper{
+    position: absolute;
+    left: 30px;
+    box-sizing: border-box;
+    display: inline-block;
+    top: 20px;
+    bottom: 20px;
+    z-index: 1;
+}
+
+.card{
+    position: absolute;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 8px 0px rgba(1, 1, 1, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.__wide{
+        width: 100vw;
+        max-width: 960px;
+    }
+    &.__narrow{
+        width: 400px;
+    }
+    &.__shifted{
+        left: 60px;
+    }
+    &.__deck{
+        width: 400px;
+    }
+}
+
+.label{
+    box-sizing: border-box;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    width: 98px;
+    height: 98px;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    line-height: 98px;
+    vertical-align: middle;
+}
