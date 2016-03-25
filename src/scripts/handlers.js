@@ -8,7 +8,6 @@ const addCard = (lastCard, isWide, cards) => {
     cards.push({type: isWide? 'wide' : 'narrow'});
     history.pushState(cards, '');
     lastCard.classList.remove('__shifted');
-    lastCard.classList.add('__deck');
     lastCard.removeEventListener('click', cardHandler);
     const context = cardToContext(cards[cards.length - 1], cards.length - 1, cards);
     const cardElem = elementFromString(cardView(context));
@@ -25,7 +24,6 @@ const removeCard = (card, cards) => {
     if(lastCard){
         cardHandler = clickHandler(cards);
         lastCard.addEventListener('click', cardHandler);
-        lastCard.classList.remove('__deck');
         if(cards.length > 1){
             lastCard.classList.add('__shifted');
         }

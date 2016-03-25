@@ -18,7 +18,7 @@ html, body{
 
 .wrapper{
     position: absolute;
-    left: 30px;
+    margin-left: 30px;
     box-sizing: border-box;
     display: inline-block;
     top: 20px;
@@ -34,15 +34,22 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 460px;
+    &:last-child{
+        max-width: none;
+    }
     &.__wide{
-        width: 100vw;
-        max-width: 960px;
+        width: 460px;
+        &:last-child{
+            max-width: 960px;
+            width: 100vw;
+        }
     }
     &.__narrow{
         width: 400px;
     }
     &.__shifted{
-        left: 60px;
+        margin-left: 60px;
     }
     &.__deck{
         width: 400px;
