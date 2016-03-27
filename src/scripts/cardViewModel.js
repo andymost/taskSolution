@@ -14,7 +14,6 @@ export const cardsToContext = (cards) => (
 export const cardToContext = (card, index, cards) => (
     {
         type: card.type,
-        number: index + 1,
-        shifted: cards.length > 1 && index == (cards.length -1)
+        number: index + 1
     }
 );
