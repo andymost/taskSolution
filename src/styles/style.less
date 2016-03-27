@@ -20,7 +20,6 @@ html, body{
     position: absolute;
     left: 30px;
     box-sizing: border-box;
-    display: inline-block;
     top: 20px;
     bottom: 20px;
     z-index: 1;
@@ -34,18 +33,27 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
-    &.__wide{
-        width: 100vw;
+    width: 400px;
+    max-width: 400px;
+
+    &.__wide:last-child{
+        // -60px отступы слева + такой же справа
+        width: calc(~"100vw - 60px");
         max-width: 960px;
+        min-width: 400px;
     }
+
+    & + &.__wide:last-child{
+        // -60px отступы слева + такой же справа + сдвиг
+        width: calc(~"100vw - 120px");
+    }
+
     &.__narrow{
         width: 400px;
     }
-    &.__shifted{
+
+    & + &:last-child{
         left: 60px;
-    }
-    &.__deck{
-        width: 400px;
     }
 }
 
